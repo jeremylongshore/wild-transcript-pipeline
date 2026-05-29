@@ -1,6 +1,6 @@
 # wild-transcript-pipeline
 
-> Part of the **[wild ecosystem](https://github.com/jeremylongshore/wild-rails-ai-ops)** — 10 Ruby gems for running AI agents inside Rails apps under capability control.
+> Part of the **[wild ecosystem](https://github.com/intent-solutions-io/wild-rails-ai-ops)** — 10 Ruby gems for running AI agents inside Rails apps under capability control.
 
 Ingest conversation transcripts from AI agent sessions, normalize into a structured schema, strip sensitive content, and export clean data for downstream consumers.
 
