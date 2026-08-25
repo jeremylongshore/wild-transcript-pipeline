@@ -4,6 +4,8 @@
 
 Ingest conversation transcripts from AI agent sessions, normalize into a structured schema, strip sensitive content, and export clean data for downstream consumers.
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U5S225PTME)
+
 ## What It Does
 
 1. **Ingest** conversation records from Claude Code JSONL logs, MCP protocol logs, and generic agent conversation JSON
