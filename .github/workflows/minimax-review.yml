@@ -17,9 +17,11 @@ name: 'MiniMax Code Review'
 # ADVISORY ONLY. Never a required check, never in another job's `needs`, never
 # blocks a merge. The deterministic gate stays `CI` (rspec on Ruby 3.2 and 3.3,
 # plus rubocop at zero offenses). REVIEW.md at the repo root is the reviewer law;
-# both prompts below are distillations of it for a diff-scoped reviewer (the
-# action fetches the PR diff via the API and never checks out or executes PR
-# code).
+# both prompts below are distillations of it for a diff-scoped reviewer. This
+# workflow itself never checks out PR code: there is no `actions/checkout` step
+# and the trigger is `pull_request`. What the pinned action does with the diff
+# once it has it is trust delegated to that fork's source, which is not visible
+# from this repository.
 #
 # The action is our maintained fork (jeremylongshore/minimax-code-review),
 # SHA-pinned per supply-chain policy: it adds per-reviewer sticky comments
@@ -31,7 +33,8 @@ name: 'MiniMax Code Review'
 # forked PR never receives the MINIMAX_API_KEY secret. The same-repo guard below
 # skips fork PRs cleanly instead of failing on an empty key.
 #
-# Activation (ALREADY SET on this repository):
+# Activation (verified present on this repository at citation time; secret and
+# variable values are not readable, only their names):
 #   1. Repo secret   MINIMAX_API_KEY        = MiniMax API key
 #   2. Repo variable ENABLE_MINIMAX_REVIEW  = true        (kill switch, both lanes)
 #   3. Repo variable MINIMAX_MODEL          = MiniMax-M3  (exact id the token serves)
